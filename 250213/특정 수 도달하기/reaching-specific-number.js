@@ -14,6 +14,7 @@ for(let i =0 ; i<arr.length; i++ ){
 
 }
 
-console.log(sum+" "+avg)
+
+console.log(sum+" "+avg.toFixed(1))
 
 
