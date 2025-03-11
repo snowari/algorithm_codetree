@@ -8,6 +8,8 @@ let answer = []
 for (let elem of input){
     if(elem != 0){
         answer.push(elem)
+    }else{
+        break;
     }
 }
 
