@@ -15,18 +15,9 @@ for(let i=0; i<num[1];i++){
 }
 */
 function findIndex (num){
-    let index=0;
-    for(let i=0 ; i< nums.length ; i++){
-        if(nums[i]===num){ //인덱스 찾기
-            index = i
-           // console.log(index)
-            break;
-        }
-    }
-    if(index===0){
-        return 0;
-    }else
-        return index+1;
+    let index;
+    index = nums.indexOf(num);
+    return index === -1 ? 0 : index+1
 }
 
 //console.log("이건 배열 "+nums)
