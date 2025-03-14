@@ -23,7 +23,10 @@ function findIndex (num){
             break;
         }
     }
-    return index+1;
+    if(index===0){
+        return 0;
+    }else
+        return index+1;
 }
 
 //console.log("이건 배열 "+nums)
