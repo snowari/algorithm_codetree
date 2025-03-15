@@ -9,30 +9,17 @@ let arr2 = input[2];
  arr1 = arr1.split(' ').map(Number)
  arr2 = arr2.split(' ').map(Number)
 
-let index=-1
+let answer = "No"
 
-for(let i=0; i<cnt[0]; i++){
-    if(arr1[i]===arr2[0]){
-        index=i
+for(let i=0; i<= cnt[0]- cnt[1]; i++){
+    if (arr1.slice(i, i+cnt[1]).join(' ') === arr2.join(' ')){
+        answer  ="Yes"
         break;
     }
+
 }
 
-if(index=== -1 || index + cnt[1] > cnt [0]){
-    console.log("No")
-    process.exit(0)
-}
-
-
-
-
-for(let i=0;i<cnt[1];i++){
-    if(arr1[index+i]!== arr2[i]){
-        console.log("No")
-        process.exit(0);
-    }
-}
-console.log("Yes")
+console.log(answer)
 
 
 
