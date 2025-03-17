@@ -2,19 +2,25 @@ const fs = require('fs');
 let input = fs.readFileSync(0).toString().trim().split('\n');
 
 let n = Number(input[0])
-let arr = input[1].map(Number)
+//console.log(input)
+let arr = input[1].split(' ').map(Number)
 
 let max = 0
 
-for(let i =0; i<n ; i++){
-    if(max === arr[i]){ //중복이 발생하면
-        splice(i-1, 1);
-        i=0;
-    }
+let cnt = []
 
-    if(max>arr[i]){
-        max=arr[i];
+for (let num of arr){
+    cnt[num]=(cnt[num] || 0) +1;
+    
+}
+
+console.log(cnt)
+for(let num of arr){
+    if(cnt[num]===1&& num>max){
+        max=num;
     }
 }
 
-console.log(max)
+
+console.log(max===0 ? "-1": max)
+
