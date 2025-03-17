@@ -14,7 +14,7 @@ for (let num of arr){
     
 }
 
-console.log(cnt)
+//console.log(cnt)
 for(let num of arr){
     if(cnt[num]===1&& num>max){
         max=num;
