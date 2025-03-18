@@ -16,7 +16,7 @@ arr2 = arr2.map(row=> row.split(' ').map(Number))
 let answer  = Array(n).fill(0).map(()=> Array(m).fill(0))
 
 for(let i=0; i<n; i++){
-    for(let j=0; j<n; j++){
+    for(let j=0; j<m; j++){
         if(arr1[i][j]===arr2[i][j])
             answer[i][j]=0
         else
