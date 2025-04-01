@@ -6,22 +6,22 @@ const [A, B] = input[0].split(" ").map(Number);
 
 function fizzbuzz (a){
     let str = a.toString()
-    str = str.split('')
     for(let i of str){
         if(i==='3' || i==='6' || i==='9'){
             return true;
         }
+        
+        
     }
+    return false;
 }
 
 
 let cnt=0
-let a = A
-for(let i =0 ; i<B-A; i++){
-    if(fizzbuzz(a) || i%3===0){
+for(let i =A; i<=B; i++){
+    if(fizzbuzz(i) || i%3===0){
         cnt++;
     }
-    a++
 }
 
 console.log(cnt)
