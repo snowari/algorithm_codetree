@@ -7,7 +7,7 @@ const [A, B] = input.map(Number);
 
 function isPrime(a){
    // console.log(a)
-    if(a===2 || a===1){
+    if(a===1){
             return false
     }
     for(let i =2; i<a; i++){
