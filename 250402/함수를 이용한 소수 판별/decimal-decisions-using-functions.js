@@ -6,10 +6,12 @@ const [A, B] = input.map(Number);
 // Please Write your code here.
 
 function isPrime(a){
+   // console.log(a)
+    if(a===2 || a===1){
+            return false
+    }
     for(let i =2; i<a; i++){
         if(a%i===0){
-            return false
-        }else if(a===2 || a===1){
             return false
         }
     }
