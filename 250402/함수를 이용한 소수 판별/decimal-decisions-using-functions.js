@@ -9,6 +9,8 @@ function isPrime(a){
     for(let i =2; i<a; i++){
         if(a%i===0){
             return false
+        }else if(a===2 || a===1){
+            return false
         }
     }
     return true
