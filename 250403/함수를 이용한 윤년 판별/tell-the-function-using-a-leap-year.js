@@ -10,6 +10,8 @@ function isLeapYear(num){
             return false
         }
         return true
+    }else{
+        return false
     }
 }
 
