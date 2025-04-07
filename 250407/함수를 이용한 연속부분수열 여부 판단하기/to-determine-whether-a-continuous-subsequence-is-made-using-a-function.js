@@ -13,7 +13,7 @@ let b = input[2].split(" ").map(Number);
 function isContiguousSubarray(a,b){
     for(let i=0; i<n1 ; i++){
         if(a[i]=== b[0]){
-            let tmp = a.slice(i,n2+1).toString()
+            let tmp = a.slice(i, i+b.length).toString()
             if(tmp===b.toString()){
                 return(console.log("Yes"))
             }
