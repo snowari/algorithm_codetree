@@ -5,16 +5,12 @@ const A = input[0];
 
 function solution(str){
     let cnt =0
-    for(let i=0; i<str.length-1; i = i+2){
+    for(let i=0; i<str.length-1; i++){
         if(str[i] !== str[i+1])
             cnt++
     }
 
-    if(cnt>=2){
-        return "Yes"
-    }else{
-        return "No"
-    }
+    return cnt >=2 ? "Yes" : "No"
 }
 
 console.log(solution(A))
