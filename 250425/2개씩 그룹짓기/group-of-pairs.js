@@ -15,11 +15,7 @@ for(let i=0 ; i<n ; i++){
 
 
 let answer=0
-max.map(n => {
-    n>answer? answer=n : ''
-})
-
-console.log(answer)
+console.log(Math.max(...max))
 
 
 
