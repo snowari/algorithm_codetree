@@ -23,10 +23,13 @@ forecasts.forEach((arr,idx)=>{
 })
 
 
+//let raindays=[]
+
+weathers = weathers.sort((a,b)=> new Date(a.date) - new Date(b.date))
+
 for(elem of weathers){
     if(elem.weather === 'Rain'){
         console.log(`${elem.date} ${elem.day} ${elem.weather}`)
         break;
     }
 }
-
