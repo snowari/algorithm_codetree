@@ -5,7 +5,7 @@ const n = Number(input[0]);
 const nums = input[1].trim().split(' ').map(Number);
 
 // Please Write your code here.[    ]
-const arr = nums.sort()
+const arr = nums.sort((a, b) => a-b)
 
 const max= []
 
