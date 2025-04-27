@@ -20,7 +20,7 @@ class Student {
 }
 
 students = students.map(elem=> {
-    return new Student(elem.name, elem.height, elem.weight)
+    return new Student(elem.name, elem.height, parseFloat(elem.weight.toFixed(1)))
 })
 
 const heightSort = (b, a)=> {
