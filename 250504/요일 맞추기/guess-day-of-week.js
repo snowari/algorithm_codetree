@@ -27,14 +27,19 @@ daySum2 = cnt
 
 let answer
 
-if (daySum1<daySum2){
+//console.log(daySum1)
+//console.log(daySum2)
+if (daySum1>daySum2){
     answer = (daySum1-daySum2)%7
+    answer = day[7-((answer+7)%7)]
    
-    answer=day[answer]
+    
     
 }else{
     answer = (daySum2-daySum1)%7
-    answer = day[(answer+7)%7]
+    //console.log(answer)
+    answer=day[answer]
+    
 }
 
 console.log(answer)
