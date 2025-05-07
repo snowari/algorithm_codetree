@@ -7,7 +7,9 @@ arr= [0] * n
 
 for n in commands:
     a,b =n
-    for i in range(a, b+1):
+
+
+    for i in range(a-1, b):
         arr[i] +=1
 
 
