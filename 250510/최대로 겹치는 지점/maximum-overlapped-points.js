@@ -6,23 +6,18 @@ const segments = [];
 for (let i = 1; i <= n; i++) {
   segments.push(input[i].split(' ').map(Number));
 }
-const answer=Array(100).fill(0)
+const answer=Array(101).fill(0)
 //console.log(answer)
 
 for(let seg of segments){
     let start = seg[0]
     let end = seg[1]
     for(let i =start; i<end+1 ; i++){
-        answer[i] += 1
+        answer[i] ++;
     }
 }
-
-console.log(Math.max(...answer))
-
-
-
-
-
+let max = Math.max(...answer)
+console.log(max)
 //console.log(segments)
 
 
