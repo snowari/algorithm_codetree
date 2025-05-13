@@ -1,8 +1,8 @@
 const fs = require("fs");
-const input = fs.readFileSync(0).toString().trim().split("\n");
+const input = fs.readFileSync(0).toString().trim().split('\n');
 
 const n = Number(input[0]);
-const rects = input.slice(1, n + 1).map(line => line.split(" ").map(Number));
+const rects = input.slice(1, n + 1).map(line => line.split(' ').map(Number));
 
 const board = Array.from({ length: 100 }, () => Array(100).fill(0));
 
@@ -21,3 +21,5 @@ for (let row of board) {
 }
 
 console.log(area);
+
+// Please Write your code here.
