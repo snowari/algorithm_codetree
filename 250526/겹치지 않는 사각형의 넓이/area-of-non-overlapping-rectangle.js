@@ -1,9 +1,14 @@
 const fs = require("fs");
 const input = fs.readFileSync(0).toString().trim().split('\n');
 
-const rectA = input[0].split(' ').map(Number);
-const rectB = input[1].split(' ').map(Number);
-const rectM = input[2].split(' ').map(Number);
+let rectA = input[0].split(' ').map(Number);
+let rectB = input[1].split(' ').map(Number);
+let rectM = input[2].split(' ').map(Number);
+
+
+rectA = rectA.map(n => n+1000)
+rectB = rectB.map(n => n+1000)
+rectM = rectM.map(n => n+1000)
 
 // Please Write your code here.
 
