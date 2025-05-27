@@ -15,7 +15,7 @@ rects.forEach((rect)=> {
     const y = rect[1]+100
     for(let i=x ; i<x+8; i++){
         for(let j=y; j<y+8; j++ ){
-            matrix[i-100][j-100] = 1
+            matrix[i][j] = 1
         }
     }
 })
