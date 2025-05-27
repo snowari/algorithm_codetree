@@ -8,12 +8,14 @@ const rects = input.slice(1, 1 + n).map(line => line.split(' ').map(Number));
 
 let matrix = Array.from(Array(201), ()=> Array(201).fill(0))
 
+
+
 rects.forEach((rect)=> {
-    const x = rect[0]
-    const y = rect[1]
+    const x = rect[0]+100
+    const y = rect[1]+100
     for(let i=x ; i<x+8; i++){
         for(let j=y; j<y+8; j++ ){
-            matrix[i][j] = 1
+            matrix[i-100][j-100] = 1
         }
     }
 })
