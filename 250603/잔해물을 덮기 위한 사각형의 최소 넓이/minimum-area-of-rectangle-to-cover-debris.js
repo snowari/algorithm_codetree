@@ -35,11 +35,20 @@ matrix.forEach((row, i)=> {
     })
 })
 
+let answer
 const getAreaSize = (x1, y1, x2, y2) => {
-    return (x2-x1)*(y2-y1) 
+    answer = (x2-x1)*(y2-y1) 
+    return answer
 }
 
-console.log(getAreaSize(minx, miny, maxx, maxy))
+if(minx===Infinity || maxx=== Infinity) {
+    answer = 0
+}else{
+    getAreaSize(minx, miny, maxx, maxy)
+}
+
+
+console.log(answer)
 
 
 
