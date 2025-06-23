@@ -7,9 +7,9 @@ const arr = input.slice(1, n + 1).map(Number);
 
 let cnt =1
 let answer= 1
-
+//4 3 3 3 3
 for (let i = 1; i < arr.length ; i++){
-    if(arr[i] === arr[i+1]){
+    if(arr[i] === arr[i-1]){
         cnt ++;
         if(cnt > answer) answer = cnt
     }else{
