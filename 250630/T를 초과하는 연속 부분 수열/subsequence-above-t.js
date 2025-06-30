@@ -8,8 +8,8 @@ const arr = input[1].split(' ').map(Number);
 let count = 1
 let max = 1
 
-for(let i =0 ; i<arr.length ; i++){
-    if(arr[i]>= n){
+for(let i =0 ; i<n ; i++){
+    if(arr[i]>= t){
         count++
     }else{
         if(count > max){
