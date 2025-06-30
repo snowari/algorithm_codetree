@@ -5,16 +5,19 @@ const [n, t] = input[0].split(' ').map(Number);
 const arr = input[1].split(' ').map(Number);
 
 // Please Write your code here.
-let count = 1
-let max = 1
+let count = 0
+let max = 0
 
 for(let i =0 ; i<n ; i++){
-    if(arr[i]>= t){
+    if(arr[i]> t){
         count++
+       // console.log("count : " , count)
+       // console.log("arr : " , arr[i])
     }else{
         if(count > max){
             max = count
-            count = 1
+            count = 0
+         //   console.log("max : " , max)
         }
     }
 }
