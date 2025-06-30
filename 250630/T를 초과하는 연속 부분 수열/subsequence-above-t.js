@@ -13,12 +13,13 @@ for(let i =0 ; i<n ; i++){
         count++
        // console.log("count : " , count)
        // console.log("arr : " , arr[i])
-    }else{
         if(count > max){
             max = count
-            count = 0
+           
          //   console.log("max : " , max)
         }
+    }else{
+        count = 0;
     }
 }
 
