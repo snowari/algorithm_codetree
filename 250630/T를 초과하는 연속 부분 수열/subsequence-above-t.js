@@ -22,4 +22,9 @@ for(let i =0 ; i<n ; i++){
     }
 }
 
+if(count  > max) {
+    max = count
+}
+
+
 console.log(max)
