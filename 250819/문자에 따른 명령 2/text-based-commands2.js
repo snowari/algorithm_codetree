@@ -14,10 +14,10 @@ for (let c of commands){
     }else if(c==="L"){
         dirNum = (dirNum+3) %4
     }else{
-        continue
+        x+=dx[dirNum]
+        y+=dy[dirNum]
+        
     }
-    x+=dx[dirNum]
-    y+=dy[dirNum]
 }
 
 
