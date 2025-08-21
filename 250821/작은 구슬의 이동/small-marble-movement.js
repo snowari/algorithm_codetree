@@ -7,21 +7,21 @@ r = Number(r);
 c = Number(c);
 
 // dx, dy: R, L, U, D
-const dx = [1,-1,0,0];
-const dy = [0,0,1,-1];
+const dx = [-1,1,0,0];
+const dy = [0,0,-1,1];
 
 const mapper = {
-    "R" : 0,
-    "L" : 1,
-    "U" : 2,
-    "D" : 3
+  "U": 0,
+  "D": 1,
+  "L": 2,
+  "R": 3
 };
 
 function reverseDir(d) {
-  if (d === 0) return 1;
-  if (d === 1) return 0;
-  if (d === 2) return 3;
-  return 2;
+  if (d === 0) return 1; 
+  if (d === 1) return 0; 
+  if (d === 2) return 3; 
+  return 2;            
 }
 
 let x=r, y=c;
