@@ -15,7 +15,7 @@ const movesB = moves.slice(n);
 
 
 const expandTimeline = (moves) => {
-    const pos = [];
+    const pos =[];
     let cur = 0;
     for (const [dist, dir] of moves) {
         const step = dir === "R" ? 1 : -1;
@@ -30,19 +30,18 @@ const expandTimeline = (moves) => {
 const posA = expandTimeline(movesA);
 const posB = expandTimeline(movesB);
 
-const max = Math.max(posA.length, posB.length);
+const T = Math.max(posA.length, posB.length) - 1; 
+
+const fillTo = (arr, len) => {
+  const last = arr[arr.length - 1] ?? 0;
+  while (arr.length < len) arr.push(last);        
+};
+fillTo(posA, T + 1);
+fillTo(posB, T + 1);
+
+
 let meet = 0;
-let prevEqual = false;
-
-for (let t = 0; t < max; t++) {
-    const aPos = t < posA.length ? posA[t] : lastOf(posA);
-    const bPos = t < posB.length ? posB[t] : lastOf(posB);
-    const equal = (aPos === bPos);
-
-    if (equal && !prevEqual) {
-        meet++;
-    }
-    prevEqual = equal;
+for (let i = 1; i <= T; i++) {
+  if (posA[i] === posB[i] && posA[i - 1] !== posB[i - 1]) meet++;
 }
-
 console.log(meet);
