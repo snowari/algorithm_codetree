@@ -2,11 +2,49 @@ const fs = require("fs");
 const input = fs.readFileSync(0).toString().trim().split('\n');
 
 const [n, m] = input[0].split(' ').map(Number);
-const movesA = input.slice(1, 1 + n);
-const movesB = input.slice(1 + n, 1 + n + m);
+const parseMove = (s) => {
+    const [num, ch] = s.trim().split(/\s+/); 
+    return [Number(num), ch]
+}
 
-// Please Write your code here.
+const moves = input.slice(1,1+n+m).map(parseMove)
 
+let movesA = moves.slice(0,n);
+let movesB = moves.slice(n);
 
-console.log(movesA, movesB)
-let a, b =0
+const expandTimeline = (moves) => {
+    const pos = []
+    let cur = 0;
+    for (const [dist, dir] of moves){
+        const step = dir === "R" ? 1 : -1
+        for (let i=0; i<dist; i++){
+            cur += step
+            pos.push(cur)
+        } 
+    }
+    return pos
+}
+
+const posA = expandTimeline(movesA)
+const posB = expandTimeline(movesB)
+
+//console.log(posA, posB)
+
+const max = Math.max(posA.length, posB.length)
+let meet=0;
+let prevEqul = false
+
+for(let t=0; t< max; t++){
+    const aPos = t<posA.length ? posA[t]  : posA[posA.length -1]
+    const bPos = t<posB.length ? posB[t]  : posB[posB.length -1]
+    const equl = (aPos === bPos)
+    if(equl && !prevEqul){
+    
+    meet ++
+    //console.log(t)    
+    } 
+    prevEqul = equl
+        
+}
+
+console.log(meet)
