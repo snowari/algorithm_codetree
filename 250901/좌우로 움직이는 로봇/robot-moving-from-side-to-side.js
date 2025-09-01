@@ -8,6 +8,7 @@ const parseMove = (s) => {
 }
 
 const moves = input.slice(1,1+n+m).map(parseMove)
+const lastOf = (arr) => (arr.length ? arr[arr.length -1] : 0)
 
 let movesA = moves.slice(0,n);
 let movesB = moves.slice(n);
@@ -32,18 +33,18 @@ const posB = expandTimeline(movesB)
 
 const max = Math.max(posA.length, posB.length)
 let meet=0;
-let prevEqul = false
+let prevEqual = false
 
 for(let t=0; t< max; t++){
-    const aPos = t<posA.length ? posA[t]  : posA[posA.length -1]
-    const bPos = t<posB.length ? posB[t]  : posB[posB.length -1]
-    const equl = (aPos === bPos)
-    if(equl && !prevEqul){
+    const aPos = t<posA.length ? posA[t]  : lastOf(posA)
+    const bPos = t<posB.length ? posB[t]  : lastOf(posB)
+    const equal = (aPos === bPos)
+    if(equal && !prevEqual){
     
     meet ++
     //console.log(t)    
     } 
-    prevEqul = equl
+    prevEqual = equal
         
 }
 
