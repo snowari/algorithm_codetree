@@ -15,7 +15,7 @@ function solution(grid) {
         for(let c1=1;c1<C-1; c1++){
             if(grid[r1][c1] === start) continue; //색 같으면 건너뜀
             for(let r2= r1+1; r2<R-1; r2++){
-                for(let c2= c1+1; c2<R-1; c2++){
+                for(let c2= c1+1; c2<C-1; c2++){
                     const mid1= grid[r1][c1]
                     const mid2= grid[r2][c2]
 
