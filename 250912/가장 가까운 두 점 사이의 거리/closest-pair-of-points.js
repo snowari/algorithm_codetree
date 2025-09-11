@@ -7,7 +7,7 @@ const points = input.slice(1, 1 + n).map(line => line.split(' ').map(Number));
 // Please Write your code here.
 
 
-let min = Infinity
+let min = 1000
 
 for(let i=0 ; i<n; i++){
     for(let j=0; j<n; j++){
