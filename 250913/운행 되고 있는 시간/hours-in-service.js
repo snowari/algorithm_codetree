@@ -6,36 +6,25 @@ const segments = input.slice(1, n + 1).map(line => line.split(' ').map(Number));
 
 // Please Write your code here.
 
-let removedIndex = -1
-let minLength = Infinity
 
-for(let i=0; i<n; i++){
-    const [start, end] = segments[i]
-    const length = end-start
 
-    if(length < minLength){
-        minLength = length
-        removedIndex = i
-    }
-}
-
-let totalTime = 0
-let timeTable = Array(1001).fill(0)
+let maxTime =0
 for (let i=0; i<n; i++){
-    if( i===removedIndex){
-        continue;
+    let timeTable = Array(1001).fill(0)
+    let totalTime = 0
+    for(let j=0; j<n; j++){
+        if(i===j){
+            continue
+        }
+
+        const [start, end]= segments[j]
+        for(let j= start; j<end; j++){
+            timeTable[j] =1
+        }
     }
-    const [start, end] = segments[i]
-    for(let j=start; j<end; j++){
-        timeTable[j]++;
-    }
+
+    totalTime = timeTable.reduce((acc,cur) => acc+cur, 0)
+    maxTime = Math.max(totalTime, maxTime)
 }
 
-timeTable.forEach(t=> {
-    if(t>0){
-        totalTime ++;
-    }
-})
-totalTime++;
-
-console.log(totalTime)
+console.log(maxTime)
