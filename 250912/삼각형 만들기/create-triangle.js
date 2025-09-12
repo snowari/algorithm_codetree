@@ -14,7 +14,7 @@ const getArea = (dot1,dot2,dot3)=>{
     const [x3,y3] = dot3
     const cross = (x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1);
     if(cross === 0){
-        return
+        return -1
     }
 
     const side1 = Math.pow(dot2[0]-dot1[0], 2) + Math.pow(dot2[1]-dot1[1],2) 
