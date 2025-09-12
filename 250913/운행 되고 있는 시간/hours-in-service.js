@@ -20,12 +20,22 @@ for(let i=0; i<n; i++){
 }
 
 let totalTime = 0
+let timeTable = Array(1001).fill(0)
 for (let i=0; i<n; i++){
     if( i===removedIndex){
         continue;
     }
     const [start, end] = segments[i]
-    totalTime += end-start
+    for(let j=start; j<end; j++){
+        timeTable[j]++;
+    }
 }
 
-console.log(totalTime-1)
+timeTable.forEach(t=> {
+    if(t>0){
+        totalTime ++;
+    }
+})
+totalTime++;
+
+console.log(totalTime)
