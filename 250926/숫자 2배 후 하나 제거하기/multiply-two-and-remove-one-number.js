@@ -4,7 +4,7 @@ const n = Number(input[0]);
 const arr = input[1].trim().split(' ').map(Number);
 // Please Write your code here.
 
-let minDiff=1000
+let minDiff=Infinity
 for(let i=0; i<n; i++){
     let tempArr = [...arr]
     tempArr[i] *=2
