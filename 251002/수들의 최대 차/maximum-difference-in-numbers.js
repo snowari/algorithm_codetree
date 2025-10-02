@@ -7,19 +7,17 @@ const arr = input.slice(1, 1 + n).map(Number);
 // Please Write your code here.
 
 
-let sorted = [... new Set(arr.sort((a,b)=> (a-b)))]
-//console.log(sorted)
+const sorted = arr.sort((a,b)=>(a-b))
 let maxCount =0
-for(let i=0; i<sorted.length; i++){
-    let diff
+for(let i=0; i<arr.length; i++){
     let count =0
+    let diff = sorted[i]+k
     for(let j=0; j<n; j++){
-        diff = Math.abs(sorted[i]-arr[j])
-        if(diff<= k){
-            count++
+        if(sorted[j] <= diff && sorted[j]>= sorted[i]){
+            count ++
         }
     }
-    maxCount = Math.max(count, maxCount)
+    maxCount = Math.max(maxCount, count)
 }
 
-console.log(maxCount-1)
+console.log(maxCount)
