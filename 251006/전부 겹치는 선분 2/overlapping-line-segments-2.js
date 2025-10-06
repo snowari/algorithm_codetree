@@ -13,17 +13,17 @@ let answer = "No"
 
 // Please Write your code here.
 for(let i=0; i<n; i++){//
-let maxX = 1
-let minX = 100
+let maxStart = 1
+let minEnd = 100
     for(let j=0; j<n; j++){
         if(i===j){
             continue
         }
-        minX = Math.min(minX, x1List[j])
-        maxX = Math.max(maxX, x2List[j])
+        minEnd = Math.min(minEnd, x2List[j])
+        maxStart = Math.max(maxStart, x1List[j])
 
     }
-    if(minX <= maxX) {
+    if(maxStart <= minEnd) {
         answer = "Yes"
         break;
     }
