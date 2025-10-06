@@ -15,7 +15,7 @@ for(let a=1; a<10; a++){
         }else if(elem < a){
             cost += a- elem
         }else {
-            cost += elem - (a+2)
+            cost += elem - (a+k)
         }
     })
 
