@@ -7,7 +7,7 @@ const arr = input[1].trim().split(' ').map(Number);
 // Please Write your code here.
 
 let minCost = Infinity
-for(let a=1; a<10; a++){
+for(let a=1; a<10000; a++){
     let cost = 0
     arr.forEach(elem => {
         if( a<= elem && elem <= a+k){
