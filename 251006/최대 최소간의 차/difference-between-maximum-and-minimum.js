@@ -6,7 +6,7 @@ const arr = input[1].trim().split(' ').map(Number);
 
 // Please Write your code here.
 
-let minCost = 10000
+let minCost = Infinity
 for(let a=1; a<10; a++){
     let cost = 0
     arr.forEach(elem => {
