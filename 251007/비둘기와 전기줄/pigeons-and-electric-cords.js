@@ -15,9 +15,9 @@ for(let i=0; i<n; i++){
     const birdPosition = movements[i][1]
     if(position[birdsNum]!== -1 && position[birdsNum] !== birdPosition){ //서잇는 곳 바뀜
         count++
-    }else{
-        position[birdsNum] = birdPosition
     }
+    position[birdsNum] = birdPosition
+    
 }
 
 console.log(count)
