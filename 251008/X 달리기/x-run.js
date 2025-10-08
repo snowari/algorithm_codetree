@@ -14,8 +14,10 @@ function solve() {
   }
 
   const queue = [[1, 1, 1]];
-  const visited = Array.from({ length: x + 1 }, () => Array(x + 2).fill(false));
-  visited[1][1] = true;
+  const visited = new Set();
+  visited.add("1,1");
+
+  const maxSpeed = Math.ceil(Math.sqrt(2 * x)) + 2;
 
   let head = 0;
 
@@ -25,7 +27,7 @@ function solve() {
     for (const delta of [1, 0, -1]) {
       const nextSpeed = speed + delta;
       
-      if (nextSpeed < 1 || nextSpeed > x + 1) continue;
+      if (nextSpeed < 1 || nextSpeed > maxSpeed) continue;
 
       const nextDist = dist + nextSpeed;
 
@@ -36,8 +38,9 @@ function solve() {
         return;
       }
 
-      if (!visited[nextDist][nextSpeed]) {
-        visited[nextDist][nextSpeed] = true;
+      const key = `${nextDist},${nextSpeed}`;
+      if (!visited.has(key)) {
+        visited.add(key);
         queue.push([nextDist, nextSpeed, time + 1]);
       }
     }
