@@ -10,7 +10,7 @@ const leftGap = b-a
 const rightGap = c-b
 
 let ans = 0
-if(leftGap ===1 && rightGap===2) ans =0;
+if(leftGap ===1 && rightGap===1) ans =0;
 else if(leftGap===2 || rightGap===2) ans = 1;
 else ans = 2
 
