@@ -26,7 +26,19 @@ const middleIndex = Math.floor((startIndex + farIndexEnd)/2)
 seats[middleIndex] = 1
 
 
-//console.log(seats)
+let minLen = n
+cnt = 0
+for(let i=0; i<n; i++){
+    if(seats[i]===0){
+        cnt ++
+    }else{
+        if(cnt>0 && cnt<minLen){
+            minLen = cnt
+        }
+        cnt = 0
+    }
+}
 
-console.log(middleIndex - startIndex + 1)
+console.log(minLen+1)
+
 
