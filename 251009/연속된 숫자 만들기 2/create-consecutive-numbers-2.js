@@ -9,7 +9,11 @@ const [a,b,c] = [...sortedArr]
 const leftGap = b-a
 const rightGap = c-b
 
-const ans = (leftGap && rightGap === 1) ? 0 : ((leftGap ===2 || rightGap === 2)? 1: 2)
+let ans = 0
+if(leftGap ===1 && rightGap===2) ans =0;
+else if(leftGap===2 || rightGap===2) ans = 1;
+else ans = 2
+
 console.log(ans)
 
 
