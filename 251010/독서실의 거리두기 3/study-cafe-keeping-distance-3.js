@@ -25,20 +25,17 @@ let startIndex = farIndexEnd - maxLen + 1
 const middleIndex = Math.floor((startIndex + farIndexEnd)/2)
 seats[middleIndex] = 1
 
-
-let minLen = n
-cnt = 0
-for(let i=0; i<n; i++){
-    if(seats[i]===0){
-        cnt ++
-    }else{
-        if(cnt>0 && cnt<minLen){
-            minLen = cnt
-        }
-        cnt = 0
-    }
+people = [];
+for (let i = 0; i < n; i++) {
+  if (seats[i] === 1) people.push(i);
 }
 
-console.log(minLen+1)
+let minDist = Infinity;
+for (let i = 0; i < people.length - 1; i++) {
+  const dist = people[i + 1] - people[i];
+  if (dist < minDist) minDist = dist;
+}
+
+console.log(minDist);
 
 
