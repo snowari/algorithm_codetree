@@ -1,0 +1,24 @@
+// Run by Node.js
+const readline = require('readline');
+
+	const gcd =(a,b) => {
+		while (b !== 0){
+			[a,b] = [b, a%b]
+		}
+		return a
+	}
+
+(async () => {
+	let rl = readline.createInterface({ input: process.stdin });
+
+
+	
+	for await (const line of rl) {
+		let [a,b] = line.split(' ').map(Number)
+		let g = gcd(a,b) // 최대공약
+		console.log(`${a/g}:${b/g}`)
+		rl.close();
+	}
+	
+	process.exit();
+})();
